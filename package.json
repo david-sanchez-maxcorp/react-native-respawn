@@ -1,24 +1,88 @@
 {
-	"name": "reactNativeRespawn",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
-	},
-	"dependencies": {
-		"react": "~15.4.0-rc.4",
-		"react-native": "0.38.0",
-		"whatwg-fetch": "^2.0.1"
-	},
-	"devDependencies": {
-		"babel-jest": "17.0.2",
-		"babel-preset-react-native": "1.9.0",
-		"jest": "17.0.3",
-		"jest-react-native": "17.0.3",
-		"react-test-renderer": "~15.4.0-rc.4"
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+  "name": "reactNativeRespawn",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "eslint": "./node_modules/.bin/eslint index.*.js ./app/**/*.js* ./internals/**/*.js* ./__tests__/**/*.js* || true"
+  },
+  "dependencies": {
+    "react": "~15.4.0-rc.4",
+    "react-native": "0.38.0",
+    "react-redux": "^4.4.6",
+    "redux": "^3.6.0",
+    "redux-saga": "^0.13.0",
+    "whatwg-fetch": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-jest": "17.0.2",
+    "babel-preset-react-native": "1.9.0",
+    "eslint": "^3.10.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-react": "^6.7.1",
+    "eslint-plugin-react-native": "^2.1.0",
+    "eslint-plugin-redux-saga": "^0.3.0",
+    "jest": "17.0.3",
+    "jest-react-native": "17.0.3",
+    "react-test-renderer": "~15.4.0-rc.4",
+    "reactotron-react-native": "^1.5.2",
+    "reactotron-redux": "^1.5.2",
+    "reactotron-redux-saga": "^1.5.2"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "env": {
+      "node": true,
+      "mocha": true,
+      "es6": true
+    },
+    "plugins": [
+      "redux-saga",
+      "react",
+      "react-native"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "arrow-body-style": [
+        2,
+        "as-needed"
+      ],
+      "comma-dangle": [
+        2,
+        "never"
+      ],
+      "import/no-unresolved": 2,
+      "jsx-a11y/aria-props": 2,
+      "jsx-a11y/href-no-hash": 2,
+      "jsx-a11y/label-has-for": 2,
+      "jsx-a11y/mouse-events-have-key-events": 2,
+      "jsx-a11y/role-has-required-aria-props": 2,
+      "jsx-a11y/role-supports-aria-props": 2,
+      "no-console": 1,
+      "prefer-template": 2,
+      "react/jsx-first-prop-new-line": [
+        2,
+        "multiline"
+      ],
+      "redux-saga/no-yield-in-race": 2,
+      "redux-saga/yield-effects": 2
+    }
+  },
+  "jest": {
+    "preset": "react-native"
+  }
 }
