@@ -1,0 +1,3 @@
+rootProject.name = 'reactNativeRespawn'
+
+include ':app'
