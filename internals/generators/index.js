@@ -50,14 +50,3 @@ function main(args) {
 
 main(process.argv.slice(2));
 process.exit();
-
-
-
-if (componentExists('App')) {
-  log(chalk.green());
-} else {
-  console.log('doesn\'t exists');
-}
-
-console.log('end');
-
