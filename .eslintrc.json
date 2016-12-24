@@ -1,0 +1,54 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "globals": {
+    "__DEV__": true
+  },
+  "plugins": [
+    "redux-saga",
+    "react",
+    "react-native"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "react/jsx-boolean-value": 0,
+    "arrow-parens": [
+      "error",
+      "always"
+    ],
+    "arrow-body-style": [
+      2,
+      "as-needed"
+    ],
+    "comma-dangle": [
+      2,
+      "never"
+    ],
+    "import/no-unresolved": 2,
+    "jsx-a11y/aria-props": 2,
+    "jsx-a11y/href-no-hash": 2,
+    "jsx-a11y/label-has-for": 2,
+    "jsx-a11y/mouse-events-have-key-events": 2,
+    "jsx-a11y/role-has-required-aria-props": 2,
+    "jsx-a11y/role-supports-aria-props": 2,
+    "no-console": 1,
+    "prefer-template": 2,
+    "react/jsx-first-prop-new-line": [
+      2,
+      "multiline"
+    ],
+    "react/jsx-filename-extension": 0,
+    "redux-saga/no-yield-in-race": 2,
+    "redux-saga/yield-effects": 2
+  }
+}

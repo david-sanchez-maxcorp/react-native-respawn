@@ -7,18 +7,22 @@
     "test": "jest",
     "ios": "npm run eslint && react-native run-ios",
     "eslint": "npm run lint:app",
-    "lint:app": "./node_modules/.bin/eslint \"index.*.js\" \"./app/**/*.js*\" \"./internals/**/*.js*\"",
+    "lint:app": "./node_modules/.bin/eslint \"index.*.js\" \"./app/**/*.js*\"",
     "g": "node ./internals/generators/index.js",
     "generate": "node ./internals/generators/index.js"
   },
   "dependencies": {
+    "native-base": "^0.5.18",
     "react": "^15.4.1",
     "react-native": "0.38.0",
     "react-native-elements": "^0.7.0",
+    "react-native-keyboard-aware-scroll-view": "^0.2.4",
+    "react-native-router-flux": "^3.37.0",
     "react-native-scrollable-tab-view": "^0.7.0",
     "react-native-vector-icons": "^3.0.0",
     "react-redux": "^4.4.6",
     "redux": "^3.6.0",
+    "redux-logger": "^2.7.4",
     "redux-saga": "^0.13.0",
     "whatwg-fetch": "^2.0.1"
   },
@@ -41,59 +45,6 @@
     "reactotron-react-native": "^1.5.2",
     "reactotron-redux": "^1.5.2",
     "reactotron-redux-saga": "^1.5.2"
-  },
-  "eslintConfig": {
-    "extends": "airbnb",
-    "env": {
-      "node": true,
-      "mocha": true,
-      "es6": true
-    },
-    "globals": {
-      "__DEV__": true
-    },
-    "plugins": [
-      "redux-saga",
-      "react",
-      "react-native"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "rules": {
-      "arrow-parens": [
-        "error",
-        "always"
-      ],
-      "arrow-body-style": [
-        2,
-        "as-needed"
-      ],
-      "comma-dangle": [
-        2,
-        "never"
-      ],
-      "import/no-unresolved": 2,
-      "jsx-a11y/aria-props": 2,
-      "jsx-a11y/href-no-hash": 2,
-      "jsx-a11y/label-has-for": 2,
-      "jsx-a11y/mouse-events-have-key-events": 2,
-      "jsx-a11y/role-has-required-aria-props": 2,
-      "jsx-a11y/role-supports-aria-props": 2,
-      "no-console": 1,
-      "prefer-template": 2,
-      "react/jsx-first-prop-new-line": [
-        2,
-        "multiline"
-      ],
-      "react/jsx-filename-extension": 0,
-      "redux-saga/no-yield-in-race": 2,
-      "redux-saga/yield-effects": 2
-    }
   },
   "jest": {
     "preset": "react-native"

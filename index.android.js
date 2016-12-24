@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './app/containers/App';
+import Root from './app';
 
-AppRegistry.registerComponent('reactNaviteRespawn', () => App);
+AppRegistry.registerComponent('reactNativeRespawn', () => Root);

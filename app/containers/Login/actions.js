@@ -1,11 +1,7 @@
 /*
  * App Actions
  *
- * Actions change things in your application
- * Since this boilerplate uses a uni-directional data flow, specifically redux,
- * we have these actions which are the only way your application interacts with
- * your application state. This guarantees that your state is up to date and nobody
- * messes it up weirdly somewhere.
+ * Actions are the only thing that can change state in your application
  *
  * To add a new Action:
  * 1) Import your constant
@@ -15,33 +11,43 @@
  *    }
  */
 
-import {REQUEST, SUCCESS, FAILURE, LOGOUT} from './constants';
+import {
+  LOGIN_REQUEST,
+  LOGIN_REQUEST_SUCCESS,
+  LOGIN_REQUEST_ERROR,
+  LOGOUT
+} from './constants';
 
 export function loginRequest(username, password) {
   return {
-    type: REQUEST,
-    username,
-    password,
-  }
+    type: LOGIN_REQUEST,
+    payload: {
+      username,
+      password
+    }
+  };
 }
 
-export function loginSuccess({token, user}) {
+export function loginSuccess({ token, user }) {
   return {
-    type: SUCCESS,
-    token,
-    user,
-  }
+    type: LOGIN_REQUEST_SUCCESS,
+    payload: {
+      token,
+      user
+    }
+  };
 }
 
-export function loginFailure(err) {
+export function loginError(error) {
   return {
-    type: FAILURE,
-    err,
-  }
+    type: LOGIN_REQUEST_ERROR,
+    payload: new Error(error),
+    error: true
+  };
 }
 
 export function logout() {
   return {
-    type: LOGOUT,
-  }
+    type: LOGOUT
+  };
 }

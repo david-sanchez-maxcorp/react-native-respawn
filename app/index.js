@@ -1,35 +1,25 @@
-import React, {Component} from 'react';
-import {Provider} from 'react-redux';
-import RootContainer from './RootContainer'
-import createStore from '../Redux'
+import React, { Component } from 'react';
+import { View, StatusBar } from 'react-native';
+import { Provider } from 'react-redux';
+import RouterContainer from './router';
+import reduxStore from './store';
 
-// create our store
-const store = createStore();
 
-/**
- * Provides an entry point into our application.  Both index.ios.js and index.android.js
- * call this component first.
- *
- * We create our Redux store here, put it into a provider and then bring in our
- * RootContainer.
- *
- * We separate like this to play nice with React Native's hot reloading.
- */
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isLoading: true,
-      store: configureStore(() => this.setState({isLoading: false})),
-    };
-  }
+const applicationStyles = { flex: 1 };
+
+/* eslint-disable react/prefer-stateless-function */
+class Root extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <RootContainer />
+      <Provider store={reduxStore}>
+        <View style={applicationStyles}>
+          <StatusBar />
+          <RouterContainer />
+        </View>
       </Provider>
-    )
+    );
   }
 }
+/* eslint-enable react/prefer-stateless-function */
 
-export default App
+export default Root;
