@@ -13,14 +13,29 @@
 
 import * as types from './constants';
 
-export function increment() {
+export function incrementCounter(id) {
   return {
-    type: types.INCREMENT
+    type: types.INCREMENT,
+    id
   };
 }
 
-export function decrement() {
+export function decrementCounter(id) {
   return {
-    type: types.DECREMENT
+    type: types.DECREMENT,
+    id
+  };
+}
+
+export function addCounter() {
+  return {
+    type: types.ADD
+  };
+}
+
+export function removeCounter(id) {
+  return {
+    type: types.REMOVE,
+    id
   };
 }

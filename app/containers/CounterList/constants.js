@@ -11,3 +11,5 @@
 
 export const INCREMENT = 'Counter/INCREMENT';
 export const DECREMENT = 'Counter/DECREMENT';
+export const ADD = 'Counter/ADD';
+export const REMOVE = 'Counter/REMOVE';
