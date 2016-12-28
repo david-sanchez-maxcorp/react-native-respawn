@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Scene, Router as RouterFlux } from 'react-native-router-flux';
 
-import Counter from './containers/Counter';
+import CounterList from './containers/CounterList';
 
 const getSceneStyle = (props, computedProps) => {
   const style = { flex: 1 };
@@ -19,7 +19,7 @@ class Router extends Component {
     return (
       <RouterFlux sceneStyle={{ backgroundColor: '#FFFFFF' }} getSceneStyle={getSceneStyle} hideTabBar={true} hideNavBar={true}>
         <Scene key="root">
-          <Scene key="counter" component={Counter} />
+          <Scene key="counterList" component={CounterList} />
         </Scene>
       </RouterFlux>
     );
