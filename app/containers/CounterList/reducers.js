@@ -2,35 +2,33 @@ import * as types from './constants';
 
 let count = 0;
 
-function addToCount(id, number) {
-  return (counter) => {
-    if (counter.id !== id) return counter;
-    return { ...counter, count: counter.count + number };
-  };
-}
-
-const addCounter = (state) => {
-  count += 1;
-  return [...state, { id: count, count: 0 }];
-};
-
-const removeCounter = (state, id) => state.filter((counter) => counter.id !== id);
-
-const incrementCounter = (state, id) => state.map(addToCount(id, 1));
-
-const decrementCounter = (state, id) => state.map(addToCount(id, -1));
-
-export default (state = [], action) => {
+const counter = (state, action) => {
   switch (action.type) {
     case types.INCREMENT:
-      return incrementCounter(state, action.id);
+      if (state.id !== action.id) return state;
+      return { ...state, count: state.count + 1 };
     case types.DECREMENT:
-      return decrementCounter(state, action.id);
-    case types.ADD:
-      return addCounter(state);
-    case types.REMOVE:
-      return removeCounter(state, action.id);
+      if (state.id !== action.id) return state;
+      return { ...state, count: state.count - 1 };
     default:
       return state;
   }
 };
+
+const counters = (state = [], action) => {
+  switch (action.type) {
+    case types.INCREMENT:
+      return state.map((c) => counter(c, action));
+    case types.DECREMENT:
+      return state.map((c) => counter(c, action));
+    case types.ADD:
+      count += 1;
+      return [...state, { id: count, count: 0 }];
+    case types.REMOVE:
+      return state.filter((c) => c.id !== action.id);
+    default:
+      return state;
+  }
+};
+
+export default counters;
