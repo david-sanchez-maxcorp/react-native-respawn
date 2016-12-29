@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import styles from './styles';
+import styles from '../styles';
 
 const Counter = ({ count, onIncrement, onDecrement, onRemove }) => (
   <View style={styles.counterContainer}>
