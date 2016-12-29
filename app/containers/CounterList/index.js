@@ -4,7 +4,7 @@ import { ScrollView, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import * as actions from './actions';
 
-import Counter from './Counter';
+import Counter from './components/Counter';
 
 const CounterList = ({
   counters,
