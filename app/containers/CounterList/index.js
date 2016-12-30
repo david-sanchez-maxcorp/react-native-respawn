@@ -37,6 +37,6 @@ CounterList.propTypes = {
   removeCounter: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state) => ({ counters: state.counters });
+const mapStateToProps = (state) => ({ counters: state.counterList.counters });
 
 export default connect(mapStateToProps, actions)(CounterList);

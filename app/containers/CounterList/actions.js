@@ -1,5 +1,5 @@
 /*
- * App Actions
+ * CounterList Actions
  *
  * Actions are the only thing that can change state in your application
  *

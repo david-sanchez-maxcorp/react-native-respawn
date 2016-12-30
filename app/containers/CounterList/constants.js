@@ -1,5 +1,5 @@
 /*
- * LoginConstants
+ * CounterList Constants
  * Each action has a corresponding type, which the reducer knows and picks up on.
  * To avoid weird typos between the reducer and the actions, we save them as
  * constants here. We prefix them with 'YourComponent/' so we avoid
@@ -9,7 +9,7 @@
  * export const YOUR_ACTION_CONSTANT = 'YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const INCREMENT = 'Counter/INCREMENT';
-export const DECREMENT = 'Counter/DECREMENT';
-export const ADD = 'Counter/ADD';
-export const REMOVE = 'Counter/REMOVE';
+export const INCREMENT = 'CounterList/INCREMENT';
+export const DECREMENT = 'CounterList/DECREMENT';
+export const ADD = 'CounterList/ADD';
+export const REMOVE = 'CounterList/REMOVE';
